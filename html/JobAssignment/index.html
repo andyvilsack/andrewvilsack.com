@@ -1,0 +1,132 @@
+<!doctype HTML>
+<head>
+  <title>Job Assignment</title>
+  <script>
+    var flagOne = false;
+    var flagTwo = false;
+    var flagThree = false;
+    var flagFour = false;
+    function selectText()
+    {
+      var numText = "";
+      numText = document.getElementById("mySelect").value;
+      if (numText == 1)
+      {
+        document.getElementById("textOne").readOnly = false;
+
+        flagOne = true;
+      }
+      else if (numText == 2)
+      {
+        document.getElementById("textOne").readOnly = false;
+        document.getElementById("textTwo").readOnly = false;
+
+        flagTwo = true;
+      }
+      else if (numText == 3)
+      {
+        document.getElementById("textOne").readOnly = false;
+        document.getElementById("textTwo").readOnly = false;
+        document.getElementById("textThree").readOnly = false;
+
+        flagThree = true;
+      }
+      else if (numText == 4)
+      {
+        document.getElementById("textOne").readOnly = false;
+        document.getElementById("textTwo").readOnly = false;
+        document.getElementById("textThree").readOnly = false;
+        document.getElementById("textFour").readOnly = false;
+
+        flagFour = true;
+      }
+    }
+    function assignTasks()
+    {
+      if (flagOne == true)
+      {
+        document.getElementById('output').innerHTML = document.getElementById('textOne').value;
+      }
+      if (flagTwo == true)
+      {
+        randNum =  Math.floor((Math.random() * 2) + 1);
+        if (randNum == 1)
+        {
+          document.getElementById('output').innerHTML = document.getElementById('textOne').value;
+        }
+        else if(randNum == 2)
+        {
+            document.getElementById('output').innerHTML = document.getElementById('textTwo').value;
+        }
+      }
+      else if (flagThree == true)
+      {
+        randNum =  Math.floor((Math.random() * 3) + 1);
+        if (randNum == 1)
+        {
+          document.getElementById('output').innerHTML = document.getElementById('textOne').value;
+        }
+        else if(randNum == 2)
+        {
+            document.getElementById('output').innerHTML = document.getElementById('textTwo').value;
+        }
+        else if(randNum == 3)
+        {
+            document.getElementById('output').innerHTML = document.getElementById('textThree').value;
+        }
+      }
+      else if (flagFour == true)
+      {
+        randNum =  Math.floor((Math.random() * 4) + 1);
+        if (randNum == 1)
+        {
+          document.getElementById('output').innerHTML = document.getElementById('textOne').value;
+        }
+        else if(randNum == 2)
+        {
+            document.getElementById('output').innerHTML = document.getElementById('textTwo').value;
+        }
+        else if(randNum == 3)
+        {
+            document.getElementById('output').innerHTML = document.getElementById('textThree').value;
+        }
+        else if(randNum == 4)
+        {
+            document.getElementById('output').innerHTML = document.getElementById('textFour').value;
+        }
+      }
+    }
+
+  </script>
+</head>
+<body style="background-color:lightgrey;">
+  <table style="width:50%">
+    <tr>
+      <td>
+        How many people are you choosing from?
+      </td>
+
+      <td>
+        <select id="mySelect">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+      </td>
+      <td>
+        <input type ="button" id="buttonOne" value="Confirm"
+          onclick = selectText();>
+    </tr>
+    <tr>
+      <td>
+        <input type="text" id="textOne" size = 10 value="" readonly> <input type="text" id="textTwo" size = 10 value="" readonly> <input type="text" id="textThree" size = 10 value="" readonly> <input type="text" id="textFour" size = 10 value="" readonly>
+      </td>
+    </tr>
+  </table>
+  <input type ="button" id="buttonOne" value="Select"
+    onclick = assignTasks();>
+  <div id="output">
+
+  </div>
+</body>
